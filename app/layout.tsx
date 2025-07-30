@@ -1,8 +1,10 @@
+import { Metadata } from 'next';
 import '../styles/globals.css';
 import '../styles/theme.module.css';
 import ClientLayout from './ClientLayout';
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL('https://your-deployment-url.vercel.app'),
   title: 'Reward System Upgrade',
   description: 'Upgrade your account and earn reward points',
   openGraph: {
