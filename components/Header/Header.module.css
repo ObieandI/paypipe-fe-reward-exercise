@@ -1,13 +1,91 @@
-.header {
+.header-container {
+  background: linear-gradient(to bottom right, #24a148, #0b8457);
+  color: white;
+  padding: 1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.middle-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-primary);
-  color: white;
-  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+}
+
+.icon-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-card {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
 }
 
 .points {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5b7259;
+  margin-top: 0.25rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cash-button {
+  background-color: #4e4cf0;
+  color: white;
+}
+
+.points-button {
+  background-color: #fff3a4;
+  color: #5b7259;
 }
