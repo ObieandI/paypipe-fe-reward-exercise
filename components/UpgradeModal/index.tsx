@@ -29,10 +29,10 @@ const UpgradeModal = ({ onUpgradeClick, onClose }: Props) => {
         </button>
       </div>
 
-      <div className={styles.banner}>
-        <span className={styles.bannerText}>Upgrade & Earn</span>
+        <div className="reward-banner">
+          <span>Upgrade & Earn</span>
         <span role="img" aria-label="coins">💰</span>
-        <span className={styles.bannerText}>20 Points</span>
+        <span>20 Points</span>
         <span className={styles.x2}>X2</span>
       </div>
 
@@ -52,12 +52,12 @@ const UpgradeModal = ({ onUpgradeClick, onClose }: Props) => {
         Upgrade account before the timer runs out to earn double the coins
       </p>
 
-      <p className={styles.points}>
+      <div className="reward-points-wrapper">
         <span className={styles.strike}>20 Points</span>
-        <span className={styles.bonus}>40 Points</span>
-      </p>
+        <span className="bonus-points">40 Points</span>
+      </div>
 
-      <button className={styles.button} onClick={() => onUpgradeClick()}>
+      <button className="global-button" onClick={() => onUpgradeClick()}>
         Upgrade account
       </button>
     </div>
