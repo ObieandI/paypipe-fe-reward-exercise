@@ -1,23 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import styles from './UpgradeModal.module.css';
 
 type Props = {
   onUpgradeClick: () => void;
   onClose: () => void;
+  secondsLeft: number;
 };
 
-const UpgradeModal = ({ onUpgradeClick, onClose }: Props) => {
-  const [secondsLeft, setSecondsLeft] = useState(60);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+const UpgradeModal = ({ onUpgradeClick, onClose, secondsLeft }: Props) => {
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
 

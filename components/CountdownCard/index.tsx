@@ -1,20 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+type Props = {
+  onClick: () => void;
+  secondsLeft: number;
+};
 
-const CountdownCard = ({ onClick }: { onClick: () => void }) => {
-  const [secondsLeft, setSecondsLeft] = useState(60);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+const CountdownCard = ({ onClick, secondsLeft }: Props) => {
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
-
   const isUrgent = secondsLeft <= 30;
 
   return (

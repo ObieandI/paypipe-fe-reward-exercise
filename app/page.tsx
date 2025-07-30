@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import UpgradeModal from '@/components/UpgradeModal';
 import TaskCompleteModal from '@/components/TaskCompleteModal';
@@ -12,9 +12,17 @@ export default function Page() {
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [showCompleteModal, setShowCompleteModal] = useState(false);
   const [hasUpgraded, setHasUpgraded] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(60); // Shared timer
+
   const dispatch = useDispatch();
 
-  const rewardPoints = useSelector((state: RootState) => state.reward.points);
+  // Shared countdown timer logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleUpgradeClick = () => {
     setShowUpgradeModal(true);
@@ -38,7 +46,7 @@ export default function Page() {
   return (
     <main className="page-container">
       {!showUpgradeModal && !showCompleteModal && !hasUpgraded && (
-        <CountdownCard onClick={handleUpgradeClick} />
+        <CountdownCard onClick={handleUpgradeClick} secondsLeft={secondsLeft} />
       )}
 
       {(showUpgradeModal || showCompleteModal) && (
@@ -47,6 +55,7 @@ export default function Page() {
             <UpgradeModal
               onUpgradeClick={handleConfirmUpgrade}
               onClose={handleCloseUpgradeModal}
+              secondsLeft={secondsLeft} // pass shared timer
             />
           )}
 
