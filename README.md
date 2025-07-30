@@ -48,22 +48,7 @@ This project is a front-end implementation of a gamified reward system upgrade f
 
 ## File Structure
 
-├── app/
-│ ├── layout.tsx # App layout + SEO metadata
-│ └── page.tsx # Home page with timer and modal flow
-├── components/
-│ ├── Header/ # Top header with reward points
-│ ├── CountdownCard/ # Timer with urgency styling
-│ ├── UpgradeModal/ # Upgrade prompt modal
-│ └── TaskCompleteModal/ # Completion modal (+40 points)
-├── store/
-│ ├── index.ts # Configures Redux store
-│ └── rewardSlice.ts # Manages reward point state
-├── styles/
-│ ├── globals.css # Base styles
-│ └── theme.module.css # CSS variables for theme colors
-└── public/
-└── coins.png # Coin icon asset
+![alt text](image.png)
 
 ---
 
