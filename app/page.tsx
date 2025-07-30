@@ -1,26 +1,50 @@
 'use client';
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import UpgradeModal from '@/components/UpgradeModal';
+import TaskCompleteModal from '@/components/TaskCompleteModal';
 import CountdownCard from '@/components/CountdownCard';
+import { incrementBy } from '@/store/rewardSlice';
 
-export default function Home() {
-  const [showModal, setShowModal] = useState(true);
+export default function Page() {
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [showCompleteModal, setShowCompleteModal] = useState(false);
+  const dispatch = useDispatch();
 
   const handleUpgradeClick = () => {
-    console.log('Upgrade clicked!');
-    alert('Upgrade button clicked!');
+    setShowUpgradeModal(true);
   };
 
-  const handleClose = () => {
-    console.log('Close clicked!');
-    setShowModal(false);
+  const handleConfirmUpgrade = () => {
+    dispatch(incrementBy(40));
+    setShowUpgradeModal(false);
+    setShowCompleteModal(true);
+  };
+
+  const handleCloseUpgradeModal = () => {
+    setShowUpgradeModal(false);
+  };
+
+  const handleCloseComplete = () => {
+    setShowCompleteModal(false);
   };
 
   return (
     <main>
-      <h2>Welcome to the Reward System</h2>
-      {showModal && (
-        <CountdownCard onUpgradeClick={handleUpgradeClick} onClose={handleClose} />
+      {!showUpgradeModal && !showCompleteModal && (
+        <CountdownCard onClick={handleUpgradeClick} />
+      )}
+
+      {showUpgradeModal && (
+        <UpgradeModal
+          onUpgradeClick={handleConfirmUpgrade}
+          onClose={handleCloseUpgradeModal}
+        />
+      )}
+
+      {showCompleteModal && (
+        <TaskCompleteModal onClose={handleCloseComplete} />
       )}
     </main>
   );

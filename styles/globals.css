@@ -1,0 +1,58 @@
+.countdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.countdown-banner {
+  background-color: #0a3706;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.countdown-timer {
+  margin-left: 0.5rem;
+  color: #ddf20d;
+}
+
+.upgrade-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 90%;
+  max-width: 330px;
+  cursor: pointer;
+}
+
+.upgrade-left {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1c9b58;
+}
+
+.upgrade-center {
+  flex: 1;
+}
+
+.upgrade-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.upgrade-subtitle {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.upgrade-arrow {
+  font-size: 1.5rem;
+  color: #888;
+}
