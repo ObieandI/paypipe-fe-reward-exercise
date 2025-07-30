@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💰 Reward System Upgrade – Paypipe Front-End Challenge
 
-## Getting Started
+This project is a front-end implementation of a gamified reward system upgrade flow, built using **Next.js 14**, **React**, **Redux Toolkit**, and **CSS Modules**. It’s a take-home challenge provided by Paypipe, aimed to simulate a real-world upgrade user flow with countdown logic, modals, and global reward state.
 
-First, run the development server:
+**(Vercel):** (https://vercel.com/ambras-projects-554ff293/paypipe-fe-reward-exercise)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features Implemented
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Core Functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Countdown Card with Urgency Shift**  
+  - Starts at 1 minute on every page load (hardcoded).
+  - Switches style to “urgent” mode when ≤ 30 seconds.
 
-## Learn More
+- **Upgrade Flow**
+  - Clicking the card opens an **UpgradeModal**.
+  - Modal displays countdown + prompt to upgrade.
+  - On confirmation, adds **+40 reward points** and transitions to **TaskCompleteModal**.
 
-To learn more about Next.js, take a look at the following resources:
+- **Global State Management**
+  - Reward points stored in Redux global state.
+  - Accessible and updated from anywhere (e.g. header).
+  - Uses Redux Toolkit’s `createSlice`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Modals with Visual Backdrop**
+  - Modals open in center of screen.
+  - A greyed-out backdrop dims the background.
+  - ESC key and click "×" button close modal.
+  - (Focus trap to be implemented — see TODO)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Responsive Layout**
+  - Works across screen sizes from **320px to 1440px**.
+  - Max and min widths respected via CSS layout rules.
+  - Flexible layout using percentages + `max-width`.
 
-## Deploy on Vercel
+- **CSS Modules & Theme Variables**
+  - Each component has its own `.module.css`.
+  - Uses global theme variables from `theme.module.css` for consistent colors.
+  - Icons used via emoji for quick prototyping.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **SEO Metadata**
+  - Implemented Next.js Metadata API in `layout.tsx`
+  - Includes title, description, and OG tags.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## File Structure
+
+├── app/
+│ ├── layout.tsx # App layout + SEO metadata
+│ └── page.tsx # Home page with timer and modal flow
+├── components/
+│ ├── Header/ # Top header with reward points
+│ ├── CountdownCard/ # Timer with urgency styling
+│ ├── UpgradeModal/ # Upgrade prompt modal
+│ └── TaskCompleteModal/ # Completion modal (+40 points)
+├── store/
+│ ├── index.ts # Configures Redux store
+│ └── rewardSlice.ts # Manages reward point state
+├── styles/
+│ ├── globals.css # Base styles
+│ └── theme.module.css # CSS variables for theme colors
+└── public/
+└── coins.png # Coin icon asset
+
+---
+
+## Setup Instructions
+
+1. Clone the repo  
+   `git clone https://github.com/ObieandI/paypipe-fe-reward-exercise`
+
+2. Install dependencies  
+   `npm install`
+
+3. Start the dev server  
+   `npm run dev`
+
+4. Visit `http://localhost:3000`
+
+---
+
+## TODO LEFT
+
+- [ ] Add focus trap to modals for full accessibility
+- [ ] Improve modal animations (e.g. with Framer Motion)
+- [ ] Add unit tests for timer logic (e.g. using Jest)
+
+---
+
+## Acknowledgements
+
+Design based on Figma spec provided in the Paypipe challenge.
+
+Built with ❤️ in ~6 hours for the front-end take-home task.
+
+---
