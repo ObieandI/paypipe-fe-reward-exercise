@@ -15,6 +15,8 @@ const CountdownCard = ({ onClick }: { onClick: () => void }) => {
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
 
+  const isUrgent = secondsLeft <= 30;
+
   return (
     <div className="countdown-wrapper">
       <div className="countdown-banner">
@@ -24,13 +26,18 @@ const CountdownCard = ({ onClick }: { onClick: () => void }) => {
         </span>
       </div>
 
-      <div className="upgrade-card" onClick={onClick}>
+      <div
+        className={`upgrade-card${isUrgent ? ' urgent' : ''}`}
+        onClick={onClick}
+      >
         <div className="upgrade-left">
           <div className="upgrade-points">40</div>
         </div>
         <div className="upgrade-center">
           <div className="upgrade-title">Upgrade your account</div>
-          <div className="upgrade-subtitle">Complete before the timer runs out and earn extra coins</div>
+          <div className="upgrade-subtitle">
+            Complete before the timer runs out and earn extra coins
+          </div>
         </div>
         <div className="upgrade-arrow">&#8250;</div>
       </div>
