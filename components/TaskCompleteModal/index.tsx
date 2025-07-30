@@ -26,7 +26,6 @@ export default function TaskCompleteModal({
   return (
     <div className={styles.modal}>
       <div className="modal-card">
-        {/* Reusing global banner styles */}
         <div className="reward-banner">
           <span>{bannerLabel}</span>
           <span className="done-label">

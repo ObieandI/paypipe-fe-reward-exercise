@@ -37,7 +37,6 @@ export default function Page() {
 
   return (
     <main className="page-container">
-      {/* Header is now handled globally in ClientLayout */}
 
       {!showUpgradeModal && !showCompleteModal && !hasUpgraded && (
         <CountdownCard onClick={handleUpgradeClick} />

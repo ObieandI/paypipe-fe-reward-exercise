@@ -4,10 +4,9 @@
   color: white;
   padding: 1rem 0;
   border-radius: 1.5rem;
-  justify-content: center;
+  justify-self: center;
 }
 
-/* ✅ NEW: this centers the content and limits its width */
 .headerContent {
   width: 60%;
   max-width: 1440px;

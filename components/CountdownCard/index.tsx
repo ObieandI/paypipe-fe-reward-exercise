@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const CountdownCard = ({ onClick }: { onClick: () => void }) => {
-  const [secondsLeft, setSecondsLeft] = useState(20); // 20 min 20 sec
+  const [secondsLeft, setSecondsLeft] = useState(20);
 
   useEffect(() => {
     const interval = setInterval(() => {
