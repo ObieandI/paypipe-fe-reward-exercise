@@ -1,12 +1,12 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-import Image from 'next/image';
 import styles from './Header.module.css';
-import coinIcon from '/public/coin-icon.png'; // replace with correct path to the coin icon if needed
+import { RootState } from '@/store';
+
 
 export default function Header() {
-  const rewardPoints = useSelector((state: any) => state.rewards.value);
+  const rewardPoints = useSelector((state: RootState) => state.reward.points);
 
   return (
     <header className={styles.headerWrapper}>
@@ -46,7 +46,7 @@ export default function Header() {
         <div className={styles.actionsRow}>
           <button className={styles.addCash}>+ Add Cash</button>
           <button className={styles.earnPoints}>
-            <Image src={coinIcon} alt="coin" width={16} height={16} /> Earn points
+            {/* <Image src={coinIcon} alt="coin" width={16} height={16} /> Earn points */}
           </button>
         </div>
       </div>

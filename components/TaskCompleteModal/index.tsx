@@ -1,6 +1,8 @@
 'use client';
 
 import styles from './TaskCompleteModal.module.css';
+import Image from 'next/image';
+
 
 type Props = {
   onClose: () => void;
@@ -28,13 +30,19 @@ export default function TaskCompleteModal({
         <div className="reward-banner">
           <span>{bannerLabel}</span>
           <span className="done-label">
-            <span role="img" aria-label="check" className="check-icon">✓</span> Done
-          </span>        
+            <span role="img" aria-label="check" className="check-icon">✓</span> {doneLabel.replace('✓ ', '')}
+          </span>     
         </div>
 
         <h2>{heading}</h2>
-        <img src="/coins.png" alt="Coins" className={styles.image} />
-
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/coins.png"
+              alt="Coins"
+              fill
+              className={styles.image}
+            />
+          </div>
         <p>
           {rewardText}{' '}
           <span className="bonus-points">{pointsEarned}</span>
