@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import UpgradeModal from '@/components/UpgradeModal';
 import TaskCompleteModal from '@/components/TaskCompleteModal';
 import CountdownCard from '@/components/CountdownCard';
-import Header from '@/components/Header'; // ✅ import the header here
 import { incrementBy } from '@/store/rewardSlice';
 import { RootState } from '@/store';
 
@@ -38,10 +37,14 @@ export default function Page() {
 
   return (
     <main className="page-container">
-      <Header />
-      
+      {/* Header is now handled globally in ClientLayout */}
+
       {!showUpgradeModal && !showCompleteModal && !hasUpgraded && (
         <CountdownCard onClick={handleUpgradeClick} />
+      )}
+
+      {(showUpgradeModal || showCompleteModal) && (
+        <div className="modal-backdrop" />
       )}
 
       {showUpgradeModal && (

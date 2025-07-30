@@ -1,18 +1,30 @@
-.header-container {
+.headerContainer {
+  width: 70%;
   background: linear-gradient(to bottom right, #24a148, #0b8457);
   color: white;
-  padding: 1rem;
-  border-radius: 0 0 1.5rem 1.5rem;
+  padding: 1rem 0;
+  border-radius: 1.5rem;
+  justify-content: center;
 }
 
-.status-bar {
+/* ✅ NEW: this centers the content and limits its width */
+.headerContent {
+  width: 60%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.statusBar {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
-.middle-row {
+.middleRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,12 +39,13 @@
   overflow: hidden;
 }
 
-.icon-row {
+.iconRow {
   display: flex;
   gap: 1rem;
+  font-size: 1rem;
 }
 
-.summary-card {
+.summaryCard {
   background-color: white;
   color: black;
   padding: 1rem;
@@ -42,7 +55,7 @@
   align-items: center;
 }
 
-.summary-column {
+.summaryColumn {
   display: flex;
   flex-direction: column;
 }
@@ -65,13 +78,13 @@
   margin-top: 0.25rem;
 }
 
-.button-row {
+.buttonRow {
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.card-button {
+.cardButton {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   border: none;
@@ -80,12 +93,12 @@
   font-weight: 600;
 }
 
-.cash-button {
+.cashButton {
   background-color: #4e4cf0;
   color: white;
 }
 
-.points-button {
+.pointsButton {
   background-color: #fff3a4;
   color: #5b7259;
 }

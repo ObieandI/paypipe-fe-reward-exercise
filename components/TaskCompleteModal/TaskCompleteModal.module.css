@@ -1,7 +1,10 @@
+.imageWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
 .image {
-  width: 50%;
-  max-width: 120px;
-  height: auto;
-  display: block;
-  align-self: center;
+  object-fit: contain;
 }
