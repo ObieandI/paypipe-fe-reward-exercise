@@ -24,13 +24,13 @@ const UpgradeModal = ({ onUpgradeClick, onClose }: Props) => {
   return (
     <div className="modal-card">
       <div className={styles.closeRow}>
-        <button className={styles.close} onClick={() => onClose()}>
-        &times;
+        <button className={styles.close} onClick={onClose}>
+          &times;
         </button>
       </div>
 
-        <div className="reward-banner">
-          <span>Upgrade & Earn</span>
+      <div className="reward-banner">
+        <span>Upgrade & Earn</span>
         <span role="img" aria-label="coins">💰</span>
         <span>20 Points</span>
         <span className={styles.x2}>X2</span>
@@ -57,7 +57,7 @@ const UpgradeModal = ({ onUpgradeClick, onClose }: Props) => {
         <span className="bonus-points">40 Points</span>
       </div>
 
-      <button className="global-button" onClick={() => onUpgradeClick()}>
+      <button className="global-button" onClick={onUpgradeClick}>
         Upgrade account
       </button>
     </div>
