@@ -13,7 +13,7 @@ const UpgradeModal = ({ onUpgradeClick, onClose, secondsLeft }: Props) => {
   const seconds = secondsLeft % 60;
 
   return (
-    <div className="modal-card">
+    <div className={`modal-card ${secondsLeft <= 30 ? 'urgent' : ''}`}>
       <div className={styles.closeRow}>
         <button className={styles.close} onClick={onClose}>
           &times;
