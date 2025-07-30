@@ -37,24 +37,23 @@ export default function Page() {
 
   return (
     <main className="page-container">
-
       {!showUpgradeModal && !showCompleteModal && !hasUpgraded && (
         <CountdownCard onClick={handleUpgradeClick} />
       )}
 
       {(showUpgradeModal || showCompleteModal) && (
-        <div className="modal-backdrop" />
-      )}
+        <div className="modal-backdrop">
+          {showUpgradeModal && (
+            <UpgradeModal
+              onUpgradeClick={handleConfirmUpgrade}
+              onClose={handleCloseUpgradeModal}
+            />
+          )}
 
-      {showUpgradeModal && (
-        <UpgradeModal
-          onUpgradeClick={handleConfirmUpgrade}
-          onClose={handleCloseUpgradeModal}
-        />
-      )}
-
-      {showCompleteModal && (
-        <TaskCompleteModal onClose={handleCloseComplete} />
+          {showCompleteModal && (
+            <TaskCompleteModal onClose={handleCloseComplete} />
+          )}
+        </div>
       )}
     </main>
   );
