@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './CountdownCard.module.css';
 
 const CountdownCard = ({ onClick }: { onClick: () => void }) => {
-  const [secondsLeft, setSecondsLeft] = useState(1220); // 20 min 20 sec
+  const [secondsLeft, setSecondsLeft] = useState(20); // 20 min 20 sec
 
   useEffect(() => {
     const interval = setInterval(() => {

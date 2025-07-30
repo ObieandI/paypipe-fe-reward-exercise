@@ -1,3 +1,12 @@
+/* Page wrapper (Home Page) */
+.page-container {
+  width: 80%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .countdown-wrapper {
   display: flex;
   flex-direction: column;
@@ -55,4 +64,31 @@
 .upgrade-arrow {
   font-size: 1.5rem;
   color: #888;
+}
+
+
+@media screen and (max-width: 600px) {
+  .upgrade-modal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .page-container {
+    width: 95%;
+  }
+}
+
+.modal-card {
+  background-color: #1c9b58;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 250px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

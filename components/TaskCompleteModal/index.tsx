@@ -9,7 +9,7 @@ type Props = {
 export default function TaskCompleteModal({ onClose }: Props) {
   return (
     <div className={styles.modal}>
-      <div className={styles.card}>
+      <div className="modal-card">
         <div className={styles.header}>
           <span className={styles.badge}>Upgrade & Earn</span>
           <span className={styles.done}>✓ Done</span>

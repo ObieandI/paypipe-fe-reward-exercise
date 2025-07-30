@@ -31,7 +31,7 @@ export default function Page() {
   };
 
   return (
-    <main>
+    <main className="page-container">
       {!showUpgradeModal && !showCompleteModal && (
         <CountdownCard onClick={handleUpgradeClick} />
       )}
