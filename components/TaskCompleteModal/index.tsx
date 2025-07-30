@@ -27,11 +27,13 @@ export default function TaskCompleteModal({
         {/* Reusing global banner styles */}
         <div className="reward-banner">
           <span>{bannerLabel}</span>
-          <span className="done-label">{doneLabel}</span>
+          <span className="done-label">
+            <span role="img" aria-label="check" className="check-icon">✓</span> Done
+          </span>        
         </div>
 
         <h2>{heading}</h2>
-        <img src="/complete-task.jpg" alt="Coins" className={styles.image} />
+        <img src="/coins.png" alt="Coins" className={styles.image} />
 
         <p>
           {rewardText}{' '}

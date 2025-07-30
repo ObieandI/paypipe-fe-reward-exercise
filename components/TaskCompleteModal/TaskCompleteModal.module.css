@@ -1,0 +1,7 @@
+.image {
+  width: 50%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  align-self: center;
+}
