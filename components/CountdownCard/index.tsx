@@ -11,27 +11,32 @@ const CountdownCard = ({ onClick, secondsLeft }: Props) => {
   const isUrgent = secondsLeft <= 30;
 
   return (
-    <div className="countdown-wrapper">
-      <div className="countdown-banner">
+    <div
+      className={`upgrade-card${isUrgent ? ' urgent' : ''}`}
+      onClick={onClick}
+    >
+      {/* Timer Row */}
+      <div className="countdown-header">
         <span className="countdown-text">Time left:</span>
         <span className="countdown-timer">
           {String(minutes).padStart(2, '0')} Minutes {String(seconds).padStart(2, '0')} Seconds
         </span>
       </div>
 
-      <div
-        className={`upgrade-card${isUrgent ? ' urgent' : ''}`}
-        onClick={onClick}
-      >
+      {/* Main Card Content */}
+      <div className="upgrade-content">
         <div className="upgrade-left">
+          <img src="/coins.png" alt="coins" className="coins-img" />
           <div className="upgrade-points">40</div>
         </div>
+
         <div className="upgrade-center">
           <div className="upgrade-title">Upgrade your account</div>
           <div className="upgrade-subtitle">
             Complete before the timer runs out and earn extra coins
           </div>
         </div>
+
         <div className="upgrade-arrow">&#8250;</div>
       </div>
     </div>

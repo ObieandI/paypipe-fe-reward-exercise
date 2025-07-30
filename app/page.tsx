@@ -1,12 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import UpgradeModal from '@/components/UpgradeModal';
 import TaskCompleteModal from '@/components/TaskCompleteModal';
 import CountdownCard from '@/components/CountdownCard';
 import { incrementBy } from '@/store/rewardSlice';
-import { RootState } from '@/store';
 
 export default function Page() {
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
